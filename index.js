@@ -58,14 +58,11 @@ function removeFromCart(item) {
   }
   if (indexToRemove !== undefined){
     cart.splice(indexToRemove,1)
+    return cart
   } else {
-    console.log("That item is not in your cart.")
+    return "That item is not in your cart."
   }
-  console.log(indexToRemove)
 }
-
-removeFromCart("avocados")
-console.log(cart)
 
 function placeOrder(cardNumber) {
   // write your code here
