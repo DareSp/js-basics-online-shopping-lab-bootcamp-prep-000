@@ -50,17 +50,19 @@ function total() {
 console.log(cart)
 
 function removeFromCart(item) {
+  var indexToRemove = -1
   for(var i=0; i<cart.length; i++){
     if(cart[i].itemName===item){
-      var indexToRemove = i
+      indexToRemove = i
+      
     }
   }
-  if (indexToRemove !== null){
+  /*if (indexToRemove !== null){
     cart.splice(indexToRemove,1)
     //console.log(cart)
   } else {
     console.log("That item is not in your cart.")
-  }
+  }*/
 }
 
 removeFromCart("grapes")
