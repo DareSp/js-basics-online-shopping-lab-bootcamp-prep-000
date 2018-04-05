@@ -50,11 +50,10 @@ function total() {
 console.log(cart)
 
 function removeFromCart(item) {
-  var indexToRemove = -1
+  var indexToRemove
   for(var i=0; i<cart.length; i++){
     if(cart[i].itemName===item){
       indexToRemove = i
-      
     }
   }
   /*if (indexToRemove !== null){
@@ -63,10 +62,10 @@ function removeFromCart(item) {
   } else {
     console.log("That item is not in your cart.")
   }*/
+  console.log(indexToRemove)
 }
 
-removeFromCart("grapes")
-//removeFromCart("pears")
+removeFromCart("apples")
 console.log(cart)
 
 function placeOrder(cardNumber) {
