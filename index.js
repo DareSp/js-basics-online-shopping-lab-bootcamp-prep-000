@@ -65,7 +65,7 @@ function removeFromCart(item) {
   console.log(indexToRemove)
 }
 
-removeFromCart("pears")
+removeFromCart("avocados")
 console.log(cart)
 
 function placeOrder(cardNumber) {
