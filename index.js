@@ -10,20 +10,62 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- // write your code here
+  cart.push({itemName:item, itemPrice: Math.floor(Math.random()*100)+1})
+  return `${item} has been added to your cart.`
 }
 
+addToCart("apples")
+addToCart("pears")
+addToCart("avocados")
+
 function viewCart() {
-  // write your code here
+  if(cart.length===0){
+    return ("Your shopping cart is empty.")
+  }else if (cart.length===1) {
+    return (`In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}.`)
+  }else if (cart.length===2) {
+    return (`In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}, and ${cart[1].itemName} at $${cart[1].itemPrice}.`)
+  }else if (cart.length>2){
+    var cartList = "In your cart, you have"
+    for(var i=1; i<=cart.length; i++){
+      if(i<cart.length){
+        cartList += ` ${cart[i-1].itemName} at $${cart[i-1].itemPrice},`
+      }else if(i===cart.length){
+        cartList += ` and ${cart[i-1].itemName} at $${cart[i-1].itemPrice}.`
+      }
+    }
+    return cartList
+  }
 }
 
 function total() {
-  // write your code here
+  var totalPrice=0
+  for(var i=0; i<cart.length; i++){
+    totalPrice += cart[i].itemPrice 
+  }
+  return totalPrice
 }
+//total()
+
+console.log(cart)
 
 function removeFromCart(item) {
-  // write your code here
+  for(var i=0; i<cart.length; i++){
+    if(cart[i].itemName===item){
+      var indexToRemove = i
+    }
+  }
+  if (indexToRemove !== null){
+    cart.splice(indexToRemove,1)
+    //console.log(cart)
+  } else {
+    console.log("That item is not in your cart.")
+  }
 }
+
+removeFromCart("grapes")
+//removeFromCart("pears")
+console.log(cart)
 
 function placeOrder(cardNumber) {
   // write your code here
