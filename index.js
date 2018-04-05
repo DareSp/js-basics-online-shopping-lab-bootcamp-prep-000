@@ -60,7 +60,7 @@ function removeFromCart(item) {
     cart.splice(indexToRemove,1)
   } else {
     console.log("That item is not in your cart.")
-  }*/
+  }
   console.log(indexToRemove)
 }
 
