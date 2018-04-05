@@ -56,9 +56,8 @@ function removeFromCart(item) {
       indexToRemove = i
     }
   }
-  /*if (indexToRemove !== null){
+  if (indexToRemove !== undefined){
     cart.splice(indexToRemove,1)
-    //console.log(cart)
   } else {
     console.log("That item is not in your cart.")
   }*/
